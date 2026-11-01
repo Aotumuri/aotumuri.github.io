@@ -38,6 +38,10 @@ npm run preview
 - `src/components/BelowSeabed.tsx`：海底の停止位置でスクロールを遮断し、次の下方向の操作で解除・秘密のリンクを表示。
 - `src/hooks/useOcean.ts`：表示領域の検出、深度表示、`.w.` ショートカット。
 - `src/App.tsx`：各セクション、秘密のページ、404。
+- `src/components/ProjectFinder.tsx` / `ProjectFinder.css`：404の作品検索と、アクセスしたURLに対応する作品のトップへの案内。
+- `src/data/hub-projects.json`：hubの作品一覧の保存データ（2026年11月1日取得）。404ではhubの公開JSONを読み込み、接続できない場合はこのデータを表示します。トップの厳選作品には追加しません。
+
+404の一覧の提供元は [hub](https://github.com/Aotumuri/hub) の `_data/projects.json` です。作品名・説明で検索できます。URLのホストと作品パスが一致する場合だけ、作品のトップを候補として案内します。自動転送はしません。hubは過去の公開終了・移転履歴やリンクの稼働状況を記録していないため、一覧から作品の削除理由や現在の閲覧可否は断定しません。保存データを更新する場合は、hubの同ファイルの内容をコピーしてください。
 
 制作物は本人所有の公開リポジトリから選び、説明・READMEを確認して掲載しています。仮のMemoxt・AI Researchカードは外しました。表示する制作物と分類、日本語の説明は `src/content.ts`、GitHub由来のメタデータは `src/data/github-activity.json` で編集できます。
 

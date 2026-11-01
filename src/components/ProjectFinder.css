@@ -1,0 +1,26 @@
+.not-found-page { justify-content: flex-start; }
+.not-found-page > .secret-note { max-width: 36rem; font-size: 12px; line-height: 2; margin: 12px 0 24px; color: #a2becd; }
+.not-found-page > .hidden-message { font-size: clamp(16px, 3vw, 21px); }
+.project-finder { width: min(100%, 840px); margin-top: 52px; text-align: left; }
+.finder-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.finder-heading h2 { font-size: 23px; color: #d0e8e7; }
+.finder-heading a, .finder-source a { color: #a8dce4; text-decoration: underline; text-underline-offset: 4px; }
+.finder-heading a { font-size: 12px; flex-shrink: 0; }
+.finder-description, .finder-source { color: #a2becd; font-size: 12px; line-height: 1.9; }
+.project-finder label { display: block; font-size: 12px; margin: 24px 0 9px; color: #c3dae3; }
+.project-finder input { box-sizing: border-box; width: 100%; border: 1px solid #557d91; border-radius: 8px; background: #0c2135; color: #e3f1f5; font: inherit; padding: 14px 16px; }
+.project-finder input::placeholder { color: #9bb4c3; }
+.project-finder :focus-visible { outline: 2px solid #9ee7ef; outline-offset: 5px; }
+.finder-count { font-size: 12px; color: #a2becd; margin: 14px 0; }
+.finder-results { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; padding: 0; gap: 12px; }
+.finder-results li { border: 1px solid #335369; border-radius: 10px; background: #0b2032aa; padding: 20px; overflow-wrap: anywhere; }
+.finder-project { color: #d0eeee; font-size: 15px; text-decoration: underline; text-underline-offset: 4px; }
+.finder-project span { color: #8dd0de; }
+.finder-results li p { color: #acc4d1; font-size: 12px; line-height: 1.9; margin: 12px 0; }
+.finder-repository { display: block; width: fit-content; margin-top: 14px; font-size: 12px; color: #9ec4d4; text-decoration: underline; text-underline-offset: 4px; }
+.finder-empty { padding: 24px 0; color: #c3dae3; font-size: 14px; line-height: 2; }
+.finder-source { margin-top: 22px; }
+.project-suggestion { padding: 20px; margin-bottom: 32px; border: 1px solid #75b4c4; border-radius: 10px; background: #123348; overflow-wrap: anywhere; }
+.project-suggestion p { color: #bed7e0; font-size: 13px; margin: 0 0 10px; }
+.project-suggestion a { color: #d0eeee; text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 600px) { .finder-results { grid-template-columns: 1fr; } .project-finder { margin-top: 38px; } }

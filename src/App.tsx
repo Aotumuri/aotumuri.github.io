@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { contacts, profile, skills } from './content';
 import Ocean, { Fish, Jellyfish } from './components/Ocean';
 import Works from './components/Works';
+import ProjectFinder from './components/ProjectFinder';
 import BelowSeabed from './components/BelowSeabed';
 import { Navigation } from './components/Navigation';
 import { hasSeenIntro, LogoIntro } from './components/LogoIntro';
@@ -29,10 +30,10 @@ function SectionLabel({
 function HiddenPage({ secret }: { secret: boolean }) {
   const [opened, setOpened] = useState(false);
   useEffect(() => {
-    document.title = secret ? '隠しページ — Aotumuri' : 'Lost at sea — Aotumuri';
+    document.title = secret ? '隠しページ — Aotumuri' : '404 — ページが見つかりません | Aotumuri';
   }, [secret]);
   return (
-    <main className={`hidden-page ${secret ? 'secret-page' : ''}`}>
+    <main className={`hidden-page ${secret ? 'secret-page' : 'not-found-page'}`}>
       <div className="secret-stars" aria-hidden="true" />
       <span className="eyebrow hidden-masthead">
         AOTUMURI / {secret ? 'THE UNCHARTED' : 'LOST AT SEA'}
@@ -73,13 +74,14 @@ function HiddenPage({ secret }: { secret: boolean }) {
             <Fish />
           </div>
           <h1 className="error-number">404</h1>
-          <p className="hidden-message">このページは見つかりませんでした。</p>
-          <p className="secret-note">URLが違うか、まだ作っていないページです。</p>
+          <p className="hidden-message">このURLには今、ページがありません。</p>
+          <p className="secret-note">以前公開していた作品やページは、移動したり、公開を終了したりしている可能性があります。URLが間違っている場合もあります。</p>
         </>
       )}
       <a className="underlined-link" href={import.meta.env.BASE_URL}>
-        Return to surface <span aria-hidden="true">↗</span>
+        {secret ? 'Return to surface' : 'Aotumuriのトップへ'} <span aria-hidden="true">↗</span>
       </a>
+      {!secret && <ProjectFinder />}
     </main>
   );
 }
