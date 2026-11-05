@@ -33,6 +33,8 @@ npm run preview
 - `src/components/Ocean.tsx`：波、光、泡、魚、クラゲ、海底のSVG装飾。
 - `src/components/OceanScenery.css`：水の反射、遠くの魚群・エイ・クラゲ、深海の光、岩・海藻・遺跡の配置と動き。装飾はセクションの位置と高さに追従します。
 - `src/components/Works.tsx` / `Works.css`：OpenFrontの参加実績と制作物一覧。
+- 制作物の「使ってみる」は `src/data/github-activity.json` の `homepage`、ソースコードは `url` に進みます。`homepage` が未設定の場合、「使ってみる」は表示しません。
+- スマートフォンでは水深ナビゲーションが画面下の固定メニューに切り替わります。既存の英語表記で現在位置を表示し、端末下部のセーフエリアに対応しています。
 - `src/data/github-activity.json`：OpenFrontの役割・代表PR・MLSリンクと、公開リポジトリ情報。
 - `src/components/LogoIntro.tsx`：初回のロゴ表示、スキップ、フェード。
 - `src/components/BelowSeabed.tsx`：海底の停止位置でスクロールを遮断し、次の下方向の操作で解除・秘密のリンクを表示。

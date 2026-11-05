@@ -116,6 +116,27 @@ export default function Works() {
                     {project.language && (
                       <span className="repository-language">{project.language}</span>
                     )}
+                    <div className="project-actions">
+                      {project.homepage && (
+                        <a
+                          className="project-visit"
+                          href={project.homepage}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${project.name}を使ってみる（新しいタブ）`}
+                        >
+                          使ってみる <span aria-hidden="true">↗</span>
+                        </a>
+                      )}
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${project.name}のソースコードをGitHubで見る（新しいタブ）`}
+                      >
+                        ソースコード <span aria-hidden="true">↗</span>
+                      </a>
+                    </div>
                   </li>
                 ))}
             </ul>

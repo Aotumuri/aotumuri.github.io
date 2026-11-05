@@ -189,6 +189,38 @@
   font-size: 9px;
   letter-spacing: 0.3px;
 }
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  margin-top: 16px;
+  font-size: 12px;
+}
+.project-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 44px;
+  color: #c5dce2;
+}
+.project-actions .project-visit {
+  padding: 8px 16px;
+  border: 1px solid #a9dedc66;
+  border-radius: 4px;
+  background: #a9dedc0c;
+  color: #e2f1f0;
+}
+.project-actions a:hover {
+  color: #c7f6e9;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.project-actions .project-visit:hover {
+  background: #a9dedc20;
+  border-color: var(--accent);
+}
 @media (max-width: 1000px) {
   .project-groups {
     gap: 32px 25px;
@@ -216,7 +248,16 @@
     font-size: 28px;
   }
   .oss-overview p:not(.small-label) {
-    font-size: 11px;
+    font-size: 14px;
+  }
+  .project-group li > p,
+  .mls-project p {
+    font-size: 14px;
+  }
+  .repository-language,
+  .own-projects-heading > span,
+  .contribution-examples {
+    font-size: 12px;
   }
   .contribution-statistics {
     grid-template-columns: 1fr;
@@ -230,9 +271,8 @@
   .contribution-statistics dd {
     font-size: 37px;
   }
-  .contribution-statistics dt,
-  .contribution-examples {
-    font-size: 10px;
+  .contribution-statistics dt {
+    font-size: 12px;
   }
   .contribution-examples a {
     gap: 10px;

@@ -365,6 +365,9 @@ em {
   opacity: 0;
   transition: opacity 0.2s;
 }
+.mobile-section-label {
+  display: none;
+}
 .depth-navigation a:hover .depth-label,
 .depth-navigation a:focus-visible .depth-label,
 .depth-navigation a.is-active .depth-label {
@@ -1278,6 +1281,10 @@ em {
 @media (max-width: 700px) {
   html {
     scroll-padding-top: 30px;
+    scroll-padding-bottom: calc(85px + env(safe-area-inset-bottom, 0px));
+  }
+  .ocean-world {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
   }
   .site-header {
     height: 82px;
@@ -1363,27 +1370,50 @@ em {
     gap: 8px;
   }
   .depth-navigation {
-    right: 3px;
+    top: auto;
+    right: 12px;
+    left: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    transform: none;
+    flex-direction: row;
+    padding: 4px;
+    border: 1px solid #a9dedc40;
+    border-radius: 12px;
+    background: #03172df5;
+    box-shadow: 0 6px 24px #0005;
   }
   .depth-navigation a {
-    width: 30px;
-    height: 34px;
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    min-height: 48px;
+    height: auto;
+    border-radius: 8px;
+    color: #b9d5dc;
+  }
+  .depth-navigation a.is-active {
+    color: #e2f1f0;
+    background: #a9dedc22;
+  }
+  .depth-navigation a:focus-visible {
+    outline-offset: -2px;
   }
   .depth-navigation:before {
-    right: 14px;
-    top: 17px;
-    bottom: 17px;
+    display: none;
   }
   .depth-navigation i {
-    width: 4px;
-    height: 4px;
+    display: none;
+  }
+  .mobile-section-label {
+    display: block;
+    font-size: 12px;
   }
   .depth-label {
     display: none;
   }
   .depth-readout {
     left: 12px;
-    bottom: 25px;
+    bottom: calc(90px + env(safe-area-inset-bottom, 0px));
     font-size: 7px;
     letter-spacing: 1px;
     gap: 10px;
@@ -1416,7 +1446,7 @@ em {
     letter-spacing: -1.5px;
   }
   .section-subtitle {
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 1.3px;
     margin-top: 18px;
   }
@@ -1432,12 +1462,12 @@ em {
     padding-top: 0;
   }
   .about-copy .about-lead {
-    font-size: 13px;
+    font-size: 16px;
     margin-top: 18px;
     letter-spacing: 0.5px;
   }
   .about-copy > p:not(.about-lead) {
-    font-size: 11px;
+    font-size: 14px;
     margin-top: 18px;
   }
   .interest-tags {
@@ -1446,7 +1476,7 @@ em {
     margin-bottom: 20px;
   }
   .underlined-link {
-    font-size: 10px;
+    font-size: 12px;
   }
   .section-footnote {
     margin-top: 45px;
@@ -1487,7 +1517,7 @@ em {
     padding-top: 0;
   }
   .muted-copy {
-    font-size: 10px;
+    font-size: 14px;
     margin-top: 24px;
   }
   .skill {
@@ -1495,10 +1525,10 @@ em {
     gap: 17px;
   }
   .skill h3 {
-    font-size: 12px;
+    font-size: 14px;
   }
   .skill small {
-    font-size: 8px;
+    font-size: 11px;
   }
   .jelly-one {
     top: 72%;
@@ -1529,7 +1559,7 @@ em {
     letter-spacing: -1.8px;
   }
   .contact-section .section-subtitle {
-    font-size: 10px;
+    font-size: 13px;
   }
   .contact-links {
     margin-top: 38px;
@@ -1538,10 +1568,10 @@ em {
     padding: 18px 3px;
   }
   .contact-links > a > span:first-child {
-    font-size: 12px;
+    font-size: 16px;
   }
   .contact-links small {
-    font-size: 8px;
+    font-size: 12px;
   }
   .site-footer {
     margin: 0 9%;
@@ -1588,7 +1618,7 @@ em {
   }
   .discovery-toast {
     font-size: 10px;
-    bottom: 20px;
+    bottom: calc(90px + env(safe-area-inset-bottom, 0px));
     padding: 12px 16px;
   }
   .hidden-page h1 {

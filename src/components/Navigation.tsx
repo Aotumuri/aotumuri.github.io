@@ -39,6 +39,7 @@ export function Navigation({ active }: { active: string }) {
             aria-current={active === section.id ? 'location' : undefined}
           >
             <span className="depth-label">{section.name}</span>
+            <span className="mobile-section-label">{section.name}</span>
             <i />
           </a>
         ))}
