@@ -1,0 +1,24 @@
+# Search indexing, including Google Search AI Overviews and AI Mode.
+# Google-Extended (Gemini training/grounding) is not allowed by this policy.
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-Video
+User-agent: Googlebot-News
+User-agent: Google-InspectionTool
+User-agent: bingbot
+User-agent: DuckDuckBot
+User-agent: Applebot
+User-agent: Baiduspider
+User-agent: YandexBot
+User-agent: Yeti
+Allow: /
+
+# Keep Apple's AI training control separate from Applebot search crawling.
+User-agent: Applebot-Extended
+Disallow: /
+
+# All other crawlers, including AI training and bulk collection.
+User-agent: *
+Disallow: /
+
+Sitemap: https://aotumuri.github.io/sitemap.xml

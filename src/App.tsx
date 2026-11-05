@@ -31,6 +31,19 @@ function HiddenPage({ secret }: { secret: boolean }) {
   const [opened, setOpened] = useState(false);
   useEffect(() => {
     document.title = secret ? '隠しページ — Aotumuri' : '404 — ページが見つかりません | Aotumuri';
+    const description = secret
+      ? 'Aotumuriの隠しページです。'
+      : '指定したURLに該当するページはありません。公開中の作品はAotumuriのトップページからご覧ください。';
+    document
+      .querySelector<HTMLMetaElement>('meta[name="description"]')
+      ?.setAttribute('content', description);
+    let robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+    if (!robots) {
+      robots = document.createElement('meta');
+      robots.name = 'robots';
+      document.head.append(robots);
+    }
+    robots.content = 'noindex';
   }, [secret]);
   return (
     <main className={`hidden-page ${secret ? 'secret-page' : 'not-found-page'}`}>

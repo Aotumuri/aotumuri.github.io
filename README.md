@@ -68,8 +68,11 @@ Google Fontsは任意の外部リクエストです。接続できない場合�
 3. **Actions → Deploy to GitHub Pages** の成功後、**Settings → Pages** の公開URLを開きます。
 
 ワークフローは `actions/configure-pages` の `base_path` をViteの `BASE_PATH` に渡します。`Aotumuri-site` 等のプロジェクトサイトと、`Aotumuri.github.io` のルートサイトの両方に対応します。
+このリポジトリの公開先は `https://aotumuri.github.io/` です。canonical URLとsitemapはこのルートURLを指します。
 
-手動でプロジェクトパスを確認する場合：
+`public/robots.txt` はGoogle・Bing・DuckDuckGo・Apple・Baidu・Yandex・Naverの検索用クローラーとGoogleのURL検査を許可し、その他は原則拒否します。Google検索のAI Overviews・AI Modeは許可対象です。Google-Extended（Geminiの学習・グラウンディング）とApplebot-Extended（AI学習）は許可しません。これはクローラーへの巡回方針であり、アクセス制限ではありません。ルートのrobots.txtは同じホスト配下のプロジェクトサイトにも適用されます。
+
+手動でプロジェクトパスでのアセット動作を確認する場合（検索用canonicalは引き続き公開ルートを指します）：
 
 ```sh
 BASE_PATH=/Aotumuri-site/ npm run build
